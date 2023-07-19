@@ -60,7 +60,6 @@ async function getStreamUrl(id) {
         },
     });
     let { authToken } = data;
-    return data;
     let streamData = await axios.request({
         method: "POST",
         url: `${process.env.JIO_CINEMA_PLAYBACK}/${id}`,
