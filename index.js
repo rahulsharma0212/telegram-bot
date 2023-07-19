@@ -108,8 +108,12 @@ async function getStreamUrl(id) {
 }
 
 app.get("/getEpisodes", async (req, res) => {
-    const response = await getStreamUrl(3499624);
-    res.send(response);
+    try {
+        const response = await getStreamUrl(3499624);
+        res.send(response);
+    } catch (error) {
+        res.send(error);
+    }
 });
 
 app.post(URI, async (req, res) => {
