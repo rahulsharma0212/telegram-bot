@@ -95,6 +95,7 @@ async function getStreamUrl(id) {
             parentalPinValid: true,
         },
     });
+    return streamData;
     let { playbackUrls } = streamData.data.data;
     const { url, licenseurl } = playbackUrls[0];
     playbackUrls = `https://bitmovin.com/demos/stream-test?format=dash&manifest=${encodeURIComponent(
