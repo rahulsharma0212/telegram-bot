@@ -60,16 +60,13 @@ async function getStreamUrl(id) {
         },
     });
     let { authToken } = data;
+    return data;
     let streamData = await axios.request({
         method: "POST",
         url: `${process.env.JIO_CINEMA_PLAYBACK}/${id}`,
         headers: {
             accesstoken: authToken,
-            referer: "https://www.jiocinema.com/",
-            "user-agent":
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
             "x-platform": "androidweb",
-            "Content-Type": "application/json",
         },
         data: {
             "4k": false,
